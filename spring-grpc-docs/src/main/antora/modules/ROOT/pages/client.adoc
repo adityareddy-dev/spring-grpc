@@ -61,7 +61,7 @@ class ExtraConfiguration {
 
 	@Bean
 	GrpcChannelBuilderCustomizer<?> stubs() {
-		return GrpcChannelBuilderCustomizer.matches("stub", builder -> 
+		return GrpcChannelBuilderCustomizer.matching("stub", builder ->
 			builder.intercept(new BearerTokenAuthenticationInterceptor(() -> token(context))));
 	}
 
